@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>NIT</th>
+			<th>Importancia</th>
+			<th>Fecha</th>
+		</thead>
+		
+		<th:block th:each = "c, row: ${contribuyentes}">
+			<tr>
+				<th th:text="${c.nombre}"/>
+				<th th:text="${c.apellido}"/>
+				<th th:text="${c.s_nit}"/>
+				<th th:text="${c.codigoImportancia.nombreImportancia}"/>
+				<th th:text="${c.fecha}"/>
+			</tr>
+		</th:block>
+		
+	</table>
+	<br>
+	<form th:action="@{/index}">
+		<input type="submit" value="Regresar"/>
+	</form>
+</body>
+</html>
